@@ -1,3 +1,14 @@
+def on_button_pressed_a():
+    basic.show_leds("""
+        # # . # #
+                # . . # .
+                # # # # #
+                . . . # .
+                . . . # .
+    """,1500)
+    input.calibrate_compass()
+input.on_button_pressed(Button.A, on_button_pressed_a)
+
 def on_sound_loud():
     input.set_sound_threshold(SoundThreshold.LOUD, input.sound_level() + 50)
 input.on_sound(DetectedSound.LOUD, on_sound_loud)
@@ -6,7 +17,6 @@ def on_received_string(receivedString):
     global SMELLS
     if receivedString == "XXX":
         SMELLS = False
-    
 radio.on_received_string(on_received_string)
 
 SMELLS = False

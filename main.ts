@@ -1,3 +1,13 @@
+input.onButtonPressed(Button.A, function () {
+    basic.showLeds(`
+        # # . # #
+                # . . # .
+                # # # # #
+                . . . # .
+                . . . # .
+    `, 1500)
+input.calibrateCompass()
+})
 input.onSound(DetectedSound.Loud, function () {
     input.setSoundThreshold(SoundThreshold.Loud, input.soundLevel() + 50)
 })
