@@ -31,6 +31,13 @@ basic.showLeds(`
     `)
 basic.forever(function () {
     if (SMELLS) {
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            # . . . #
+            # # # # #
+            # . . . #
+            `)
         radio.sendNumber(1)
     } else {
         basic.showLeds(`
